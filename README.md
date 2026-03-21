@@ -1,89 +1,65 @@
-# 🌱 EcoMate-AI
+# EcoMate-AI
 
-A sustainability-focused AI application that analyzes your carbon footprint from daily activities and receipts.
+EcoMate-AI analyzes receipts, bills, and daily activities to estimate your carbon footprint and recommend greener choices, powered by multimodal AI.
+
+Upload an image of a receipt or describe your day in plain text. The app extracts individual activities, maps them to verified CO₂ emission factors, and generates a personalized sustainability report with actionable tips.
+
+**[View Live Demo](https://shamikofficial.github.io)** &nbsp;|&nbsp; **[Portfolio](https://shamikofficial.github.io)**
+
+---
 
 ## Features
 
-- 📸 Receipt OCR analysis
-- ✍️ Freeform text input for daily activities
-- 📊 Carbon footprint calculation
-- 🌿 AI-powered sustainability suggestions
-- 📈 Interactive visualizations
+- **Multimodal input** — upload receipt images or enter free-form text
+- **OCR extraction** — reads items, quantities, and services from scanned receipts
+- **CO₂ estimation** — maps activities to verified global emission factors
+- **Personalized tips** — AI-generated suggestions ranked by impact
+- **Global comparison** — contextualizes your footprint against regional and world averages
+- **Interactive visualizations** — category breakdowns and trend charts
 
-## Setup
+## Tech stack
 
-1. Clone the repository:
+| Layer | Tools |
+|---|---|
+| Frontend | Streamlit |
+| Backend | FastAPI |
+| AI / OCR | OpenAI GPT-4o, Vision API |
+| Data | pandas, NumPy |
+| Visualization | Plotly, Matplotlib |
+
+## Getting started
+
 ```bash
 git clone https://github.com/ShamikOfficial/EcoMate-AI.git
 cd EcoMate-AI
-```
-
-2. Create a virtual environment and install dependencies:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-```
-
-
-3. Set up environment variables:
-```bash
-cp .env.example .env
-# Edit .env with your OpenAI API key if using GPT-4
-```
-
-## Running the Application
-
-1. In a new terminal, start the Streamlit frontend:
-```bash
+cp .env.example .env        # add your OpenAI API key
 streamlit run app/main.py
 ```
 
-## Usage
-
-1. Choose input method:
-   - Upload a receipt image
-   - Enter text describing your daily activities
-
-2. View your carbon footprint analysis:
-   - Total CO₂e emissions
-   - Category breakdown
-   - Sustainability suggestions
-
-## Project Structure
+## Project structure
 
 ```
-carbonlyzer-ai/
-├── app/                   # Application code
-│   ├── main.py            # Streamlit frontend
-│   ├── api.py             # FastAPI backend
-│   ├── genai_model.py     # GenAI backend
-│   ├── services/          # Core services
-│   └── utils/             # Utility functions
-├── data/                  # Data files
-└── tests/                 # Test files
+EcoMate-AI/
+├── app/
+│   ├── main.py             # Streamlit frontend
+│   ├── api.py              # FastAPI backend
+│   ├── genai_model.py      # GenAI inference layer
+│   ├── services/           # Carbon calculation logic
+│   └── utils/              # Preprocessing helpers
+├── data/                   # Emission factor datasets
+└── requirements.txt
 ```
 
-## Contributing
+## How it works
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+1. User uploads a receipt image or types a description of their activities
+2. OCR pipeline extracts line items and quantities
+3. Each item is classified and matched to an emission factor (kg CO₂e)
+4. Total footprint is calculated and broken down by category
+5. GPT-4o generates ranked, personalized recommendations
 
 ## License
 
-MIT License - see LICENSE file for details
-
----
-
-## 🔍 What It Does
-
-- 📸 **Scan receipts or bills** (image or text)
-- 🧠 **AI extracts tasks** like eating meat, using AC, or taking a cab
-- ♻️ **Estimates your carbon footprint** using verified global data
-- 💡 **Recommends greener choices** to reduce your emissions
-- 🌍 **Shows the impact** if millions made the same change
-
----
+MIT
