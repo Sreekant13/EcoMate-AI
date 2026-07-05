@@ -4,7 +4,7 @@ EcoMate-AI analyzes receipts, bills, and daily activities to estimate your carbo
 
 Upload an image of a receipt or describe your day in plain text. The app extracts individual activities, maps them to verified CO₂ emission factors, and generates a personalized sustainability report with actionable tips.
 
-**[View Live Demo](https://shamikofficial.github.io)** &nbsp;|&nbsp; **[Portfolio](https://shamikofficial.github.io)**
+**[View Live Demo](https://ecomateai.streamlit.app/)** &nbsp;|&nbsp; **[Portfolio](https://sreekantbaheti.com/)**
 
 ---
 
